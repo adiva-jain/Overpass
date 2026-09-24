@@ -6,7 +6,7 @@
 
 Overpass pulls the ISS's live coordinates every 5 seconds and plots its position and ground track on a world map.
 
-<!-- [**Live demo**](https://adiva-jain.github.io/Overpass/) · [How it works](#how-it-works) · [Run locally](#run-it-locally) -->
+<!--[**Live demo**](https://adiva-jain.github.io/Overpass/) · [How it works](#how-it-works) · [Run locally](#run-it-locally)-->
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-f7df1e?logo=javascript&logoColor=black)
 ![Canvas](https://img.shields.io/badge/Canvas_2D-rendering-0e2a47)
@@ -19,7 +19,7 @@ Overpass pulls the ISS's live coordinates every 5 seconds and plots its position
 
 An *overpass* is when a satellite passes overhead. The ISS makes one somewhere on Earth constantly, circling the planet about every 90 minutes at roughly 27,600 km/h. Overpass shows you exactly where it is at any moment.
 
-The project is built with plain HTML, CSS, and JavaScript. There are no frameworks, no build tools, and no API keys, so the whole thing runs in any browser.
+The project is built with plain HTML, CSS, and JavaScript modules. There are no frameworks, no build tools, and no API keys.
 
 ## Features
 
@@ -31,19 +31,76 @@ The project is built with plain HTML, CSS, and JavaScript. There are no framewor
 
 ## How it works
 
-**Fetching and polling.** `script.js` requests the station's current state from the [Where the ISS at?](https://wheretheiss.at/w/developer) API. Polling uses a recursive `setTimeout` instead of `setInterval`, so each request starts only after the previous one finishes and slow responses can't pile up.
+**Fetching and polling.** `js/api.js` requests the station's current state from the [Where the ISS at?](https://wheretheiss.at/w/developer) API. The loop in `js/main.js` uses a recursive `setTimeout` instead of `setInterval`, so each request starts only after the previous one finishes and slow responses can't pile up.
 
-**Mapping coordinates to the screen.** The map uses an equirectangular projection, which converts latitude and longitude into pixels with two linear rescales:
+**Mapping coordinates to the screen.** `js/projection.js` uses an equirectangular projection, which converts latitude and longitude into pixels with two linear rescales:
 
 ```
 x = (longitude + 180) / 360 × width
 y = (90 − latitude)  / 180 × height
 ```
 
-Latitude is subtracted from 90 because latitude increases upward while canvas y increases downward. The same `project()` function places the grid lines, the coastlines, and the ISS marker.
+Latitude is subtracted from 90 because latitude increases upward while canvas y increases downward. Every map layer uses this one function.
 
-**Drawing the world.** Coastlines come from [Natural Earth](https://www.naturalearthdata.com/) as GeoJSON and are drawn onto an HTML canvas. GeoJSON stores points as `[longitude, latitude]`, the reverse of the usual spoken order.
+**Drawing in layers.** `js/map/canvas.js` clears the canvas and draws each layer in order: grid, coastlines, trail, then the ISS marker. Each layer lives in its own file in `js/map/`.
 
+**Drawing the world.** Coastlines come from [Natural Earth](https://www.naturalearthdata.com/) as GeoJSON. GeoJSON stores points as `[longitude, latitude]`, the reverse of the usual spoken order.
+
+**Crossing the date line.** When the ISS crosses ±180° longitude, its longitude jumps from about +179 to −179. `js/map/trail.js` skips any segment whose longitude changes by more than 180° so the line doesn't streak across the map.
+
+## Run it locally
+
+```bash
+git clone https://github.com/adiva-jain/Overpass.git
+cd Overpass
+python -m http.server 8000
+```
+
+Then open http://localhost:8000. Opening `index.html` directly won't work, because browsers only load JavaScript modules from a server.
+
+## Project structure
+
+```
+Overpass/
+├── index.html
+├── css/
+│   ├── variables.css    Colors and design tokens
+│   ├── base.css         Page-wide styles
+│   ├── header.css       Title, tagline, status
+│   ├── map.css          Map canvas
+│   └── stats.css        Live readouts
+└── js/
+    ├── main.js          Entry point and polling loop
+    ├── config.js        URLs, timing, colors
+    ├── api.js           API requests
+    ├── projection.js    Lat/lon to screen pixels
+    ├── state.js         Trail and coastline data
+    ├── ui.js            Status and readouts
+    └── map/
+        ├── canvas.js    Canvas setup and layer order
+        ├── grid.js      Grid lines
+        ├── land.js      Coastlines
+        ├── trail.js     Ground track
+        └── marker.js    ISS marker
+```
+
+## Roadmap
+
+- [ ] Show the latitude and longitude under the mouse cursor
+- [ ] Backfill the trail on page load using past positions
+- [ ] Smoothly animate the marker between updates
+- [ ] Predict and draw the next orbit
+- [ ] Shade the night side of the Earth
+- [ ] Predict the next visible overpass for your location
+
+## Data sources
+
+- ISS position: [wheretheiss.at API](https://wheretheiss.at/w/developer)
+- Coastlines: [Natural Earth](https://www.naturalearthdata.com/) (public domain)
+
+## License
+
+[MIT](LICENSE)
 **Crossing the date line.** When the ISS crosses ±180° longitude, its longitude jumps from about +179 to −179. Any trail segment whose longitude changes by more than 180° is skipped so the line doesn't streak across the map.
 
 ## Run it locally
