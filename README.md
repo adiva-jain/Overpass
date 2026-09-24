@@ -69,3 +69,7 @@ Overpass/
 
 - ISS position: [wheretheiss.at API](https://wheretheiss.at/w/developer)
 - Coastlines: [Natural Earth](https://www.naturalearthdata.com/) (public domain)
+
+## License
+
+[MIT](LICENSE)
