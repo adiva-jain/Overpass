@@ -1,9 +1,19 @@
+<div align="center">
+
 # 🛰️ Overpass
 
 **Track the International Space Station in real time.**
 
 Overpass pulls the ISS's live coordinates every 5 seconds and plots its position and ground track on a world map.
 
+<!-- [**Live demo**](https://adiva-jain.github.io/Overpass/) · [How it works](#how-it-works) · [Run locally](#run-it-locally) -->
+
+![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-f7df1e?logo=javascript&logoColor=black)
+![Canvas](https://img.shields.io/badge/Canvas_2D-rendering-0e2a47)
+![No build step](https://img.shields.io/badge/build-none-2f5d50)
+![License: MIT](https://img.shields.io/badge/license-MIT-ffd166)
+
+</div>
 
 ## About
 
