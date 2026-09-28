@@ -36,6 +36,15 @@ h1 {
   color: var(--muted);
   font-size: 0.98rem;
   text-shadow: 0 0 10px rgba(111, 227, 255, 0.12);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tagline::after {
+  content: "▌";
+  margin-left: 0.3ch;
+  color: rgba(13, 35, 64, 0.8);
+  animation: blink-caret 1s steps(1) infinite;
 }
 
 #status {
@@ -52,6 +61,7 @@ h1 {
   border: 1px solid rgba(172, 220, 255, 0.38);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34), 0 0 18px rgba(111, 227, 255, 0.08);
 }
+
 
 
 #status::before {
