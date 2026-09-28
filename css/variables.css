@@ -7,12 +7,12 @@
   --glass-border: rgba(172, 220, 255, 0.42);
   --shadow: rgba(7, 18, 31, 0.32);
   --text: #0d2340;
-  --muted: #264b74;
+  --muted: #274f7e;
   --ocean: #dfe9ff;
   --land: #f9c7d8;
   --grid: rgba(59, 102, 151, 0.28);
   --iss: #ffd36a;
   --issGlow: rgba(111, 227, 255, 0.46);
-  --live: #2ecb96;
-  --error: #ff7ca8;
+  --live: #7ce7c4;
+  --error: #ff8fc0;
 }
