@@ -33,7 +33,7 @@ h1 {
 
 .tagline {
   margin: 8px 0 0;
-  color: var(--muted);
+  color: #c5d5f0;
   font-size: 0.98rem;
   text-shadow: 0 0 10px rgba(111, 227, 255, 0.12);
   display: inline-block;
@@ -43,7 +43,8 @@ h1 {
 .tagline::after {
   content: "▌";
   margin-left: 0.3ch;
-  color: rgba(13, 35, 64, 0.8);
+  color: rgba(103, 255, 166, 0.98);
+  text-shadow: 0 0 12px rgba(103, 255, 166, 0.9);
   animation: blink-caret 1s steps(1) infinite;
 }
 
