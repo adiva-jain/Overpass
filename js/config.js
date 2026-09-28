@@ -4,9 +4,9 @@ export const POLL_MS = 5000;
 export const TRAIL_LENGTH = 300;
 
 export const COLORS = {
-  ocean: "#0e2a47",
-  land: "#2f5d50",
-  grid: "#1a3d5f",
-  iss: "#ffd166",
-  issGlow: "rgba(255, 209, 102, 0.2)",
+  ocean: "#dfe8ff",
+  land: "#f9c7d8",
+  grid: "rgba(124, 92, 146, 0.35)",
+  iss: "#ffb454",
+  issGlow: "rgba(255, 180, 84, 0.28)",
 };
