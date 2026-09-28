@@ -175,19 +175,19 @@ body::after {
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: rgba(170, 255, 214, 0.92);
+  color: rgba(116, 255, 174, 0.98);
   pointer-events: none;
   user-select: none;
   z-index: 1;
   text-transform: uppercase;
-  text-shadow: 0 0 18px rgba(111, 227, 255, 0.14), 0 0 24px rgba(255, 154, 201, 0.2);
+  text-shadow: 0 0 14px rgba(116, 255, 174, 0.9), 0 0 26px rgba(116, 255, 174, 0.5);
 }
 
 .name-watermark::before {
   content: "✦";
   font-size: 0.7em;
-  color: rgba(255, 213, 96, 0.95);
-  text-shadow: 0 0 12px rgba(255, 213, 96, 0.95);
+  color: rgba(255, 214, 94, 0.98);
+  text-shadow: 0 0 12px rgba(255, 214, 94, 0.98);
 }
 
 main {
