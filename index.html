@@ -15,26 +15,46 @@
 <link rel="stylesheet" href="css/stats.css">
 </head>
 <body>
-<main>
-  <header>
-    <div>
-      <h1>Overpass</h1>
-      <p class="tagline">Where the International Space Station is right now</p>
-    </div>
-    <div id="status">Connecting</div>
-  </header>
+  <div id="bg-scene" aria-hidden="true"></div>
 
-  <canvas id="map"></canvas>
+  <div class="sparkles" aria-hidden="true">
+    <span class="sparkle s1"></span>
+    <span class="sparkle s2"></span>
+    <span class="sparkle s3"></span>
+    <span class="sparkle s4"></span>
+    <span class="sparkle s5"></span>
+    <span class="sparkle s6"></span>
+    <span class="sparkle s7"></span>
+    <span class="sparkle s8"></span>
+    <span class="sparkle s9"></span>
+    <span class="sparkle s10"></span>
+    <span class="shooting-star st1"></span>
+    <span class="shooting-star st2"></span>
+  </div>
 
-  <dl>
-    <div><dt>Latitude</dt><dd id="lat">–</dd></div>
-    <div><dt>Longitude</dt><dd id="lon">–</dd></div>
-    <div><dt>Altitude</dt><dd id="alt">–</dd></div>
-    <div><dt>Speed</dt><dd id="vel">–</dd></div>
-    <div><dt>Sunlight</dt><dd id="vis">–</dd></div>
-  </dl>
-</main>
+  <main class="glass-panel">
+    <header class="glass-header">
+      <div>
+        <p class="eyebrow">Live orbital glow</p>
+        <h1>Overpass</h1>
+        <p class="tagline">Where the International Space Station is right now</p>
+      </div>
+      <div id="status">Connecting</div>
+    </header>
 
-<script type="module" src="js/main.js"></script>
+    <section class="map-shell glass-panel-inner">
+      <canvas id="map"></canvas>
+    </section>
+
+    <dl class="stats-grid glass-panel-inner">
+      <div><dt>Latitude</dt><dd id="lat">–</dd></div>
+      <div><dt>Longitude</dt><dd id="lon">–</dd></div>
+      <div><dt>Altitude</dt><dd id="alt">–</dd></div>
+      <div><dt>Speed</dt><dd id="vel">–</dd></div>
+      <div><dt>Sunlight</dt><dd id="vis">–</dd></div>
+    </dl>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
