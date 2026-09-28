@@ -162,16 +162,26 @@ body::after {
   position: fixed;
   right: 38px;
   bottom: 26px;
-  font-size: clamp(2.6rem, 5vw, 6rem);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1rem, 1.6vw, 1.55rem);
   line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: rgba(121, 208, 255, 0.12);
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(214, 226, 255, 0.18);
   pointer-events: none;
   user-select: none;
   z-index: 0;
-  text-shadow: 0 0 18px rgba(111, 227, 255, 0.2), 0 0 32px rgba(255, 154, 201, 0.08);
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(111, 227, 255, 0.18), 0 0 32px rgba(255, 154, 201, 0.06);
+}
+
+.name-watermark::before {
+  content: "✦";
+  font-size: 0.68em;
+  color: rgba(255, 211, 106, 0.8);
+  text-shadow: 0 0 12px rgba(255, 211, 106, 0.7);
 }
 
 main {
