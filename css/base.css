@@ -13,8 +13,8 @@ body {
   align-items: center;
   padding: 32px 20px;
   background:
-    radial-gradient(circle at top left, rgba(255, 154, 201, 0.28), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(75, 224, 255, 0.22), transparent 26%),
+    radial-gradient(circle at top left, rgba(255, 154, 201, 0.18), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(75, 224, 255, 0.12), transparent 24%),
     linear-gradient(135deg, var(--page-top) 0%, var(--page-bottom) 100%);
   color: var(--text);
   font-family: "IBM Plex Sans", system-ui, sans-serif;
@@ -66,9 +66,10 @@ body::after {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255, 183, 214, 0.9) 35%, rgba(255, 183, 214, 0) 100%);
-  box-shadow: 0 0 18px rgba(255, 177, 222, 0.9), 0 0 32px rgba(255, 146, 199, 0.7);
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(133, 195, 255, 0.75) 30%, rgba(255, 183, 214, 0) 100%);
+  box-shadow: 0 0 10px rgba(111, 227, 255, 0.55), 0 0 20px rgba(255, 154, 201, 0.35);
   animation: twinkle 4s ease-in-out infinite;
+  opacity: 0.7;
 }
 
 .sparkle::before,
@@ -108,10 +109,11 @@ body::after {
   width: 140px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255, 192, 223, 0.9) 35%, rgba(255,255,255,1) 100%);
-  box-shadow: 0 0 18px rgba(255, 185, 218, 0.9);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(122, 208, 255, 0.8) 32%, rgba(255,255,255,0.88) 100%);
+  box-shadow: 0 0 12px rgba(122, 208, 255, 0.7);
   transform: rotate(-22deg);
   animation: shoot 9s linear infinite;
+  opacity: 0.7;
 }
 
 .shooting-star::after {
@@ -154,6 +156,22 @@ body::after {
     opacity: 0;
     transform: translate3d(520px, -260px, 0) rotate(-22deg) scale(0.9);
   }
+}
+
+.name-watermark {
+  position: fixed;
+  right: 38px;
+  bottom: 26px;
+  font-size: clamp(2.6rem, 5vw, 6rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(121, 208, 255, 0.12);
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  text-shadow: 0 0 18px rgba(111, 227, 255, 0.2), 0 0 32px rgba(255, 154, 201, 0.08);
 }
 
 main {
