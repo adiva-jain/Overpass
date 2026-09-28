@@ -33,9 +33,9 @@ h1 {
 
 .tagline {
   margin: 8px 0 0;
-  color: #c5d5f0;
+  color: #d8ffe9;
   font-size: 0.98rem;
-  text-shadow: 0 0 10px rgba(111, 227, 255, 0.12);
+  text-shadow: 0 0 14px rgba(108, 255, 157, 0.28), 0 0 26px rgba(108, 255, 157, 0.16);
   display: inline-block;
   white-space: nowrap;
 }
@@ -43,8 +43,8 @@ h1 {
 .tagline::after {
   content: "▌";
   margin-left: 0.3ch;
-  color: rgba(103, 255, 166, 0.98);
-  text-shadow: 0 0 12px rgba(103, 255, 166, 0.9);
+  color: rgba(108, 255, 157, 1);
+  text-shadow: 0 0 12px rgba(108, 255, 157, 1), 0 0 20px rgba(108, 255, 157, 0.9);
   animation: blink-caret 1s steps(1) infinite;
 }
 
