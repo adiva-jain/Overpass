@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overpass | Live ISS Tracker</title>
+<meta name="description" content="Track the International Space Station's position in real time on a world map.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/map.css">
+<link rel="stylesheet" href="css/stats.css">
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Overpass</h1>
+      <p class="tagline">Where the International Space Station is right now</p>
+    </div>
+    <div id="status">Connecting</div>
+  </header>
+
+  <canvas id="map"></canvas>
+
+  <dl>
+    <div><dt>Latitude</dt><dd id="lat">–</dd></div>
+    <div><dt>Longitude</dt><dd id="lon">–</dd></div>
+    <div><dt>Altitude</dt><dd id="alt">–</dd></div>
+    <div><dt>Speed</dt><dd id="vel">–</dd></div>
+    <div><dt>Sunlight</dt><dd id="vis">–</dd></div>
+  </dl>
+</main>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
