@@ -1,18 +1,18 @@
 :root {
-  --page-top: #0a1830;
-  --page-bottom: #132b46;
+  --page-top: #081a2e;
+  --page-bottom: #122b44;
   --page-accent: #ff9ac9;
-  --glass: rgba(236, 243, 255, 0.8);
-  --glass-strong: rgba(249, 250, 255, 0.9);
-  --glass-border: rgba(128, 177, 255, 0.55);
-  --shadow: rgba(11, 22, 40, 0.22);
-  --text: #0f2444;
-  --muted: #315a8e;
+  --glass: rgba(255, 255, 255, 0.18);
+  --glass-strong: rgba(255, 255, 255, 0.22);
+  --glass-border: rgba(172, 220, 255, 0.42);
+  --shadow: rgba(7, 18, 31, 0.32);
+  --text: #0d2340;
+  --muted: #264b74;
   --ocean: #dfe9ff;
   --land: #f9c7d8;
-  --grid: rgba(59, 102, 151, 0.32);
+  --grid: rgba(59, 102, 151, 0.28);
   --iss: #ffd36a;
-  --issGlow: rgba(111, 227, 255, 0.52);
+  --issGlow: rgba(111, 227, 255, 0.46);
   --live: #2ecb96;
   --error: #ff7ca8;
 }
