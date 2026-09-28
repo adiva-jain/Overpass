@@ -165,23 +165,23 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: clamp(1rem, 1.6vw, 1.55rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.45rem);
   line-height: 1;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: rgba(214, 226, 255, 0.18);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(11, 34, 63, 0.7);
   pointer-events: none;
   user-select: none;
-  z-index: 0;
+  z-index: 1;
   text-transform: uppercase;
-  text-shadow: 0 0 18px rgba(111, 227, 255, 0.18), 0 0 32px rgba(255, 154, 201, 0.06);
+  text-shadow: 0 0 18px rgba(111, 227, 255, 0.22), 0 0 24px rgba(255, 154, 201, 0.18);
 }
 
 .name-watermark::before {
   content: "✦";
-  font-size: 0.68em;
-  color: rgba(255, 211, 106, 0.8);
-  text-shadow: 0 0 12px rgba(255, 211, 106, 0.7);
+  font-size: 0.7em;
+  color: rgba(255, 208, 118, 0.9);
+  text-shadow: 0 0 10px rgba(255, 208, 118, 0.8);
 }
 
 main {
@@ -193,7 +193,7 @@ main {
 
 .glass-panel,
 .glass-panel-inner {
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(247, 250, 255, 0.75);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
